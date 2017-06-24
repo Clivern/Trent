@@ -46,6 +46,13 @@ GET   /error    controllers.Default.error
 # Responds with 501 Not Implemented
 GET   /todo      controllers.Default.todo
 
+
+GET     /test/tpl-1                  controllers.TestController.template1()
+GET     /test/tpl-2                  controllers.TestController.template2()
+GET     /test/tpl-3                  controllers.TestController.template3()
+GET     /test/tpl-4                  controllers.TestController.template4()
+GET     /test/tpl-5                  controllers.TestController.template5()
+
 ####################################################################
 
 # Map static resources from the /public folder to the /assets URL path

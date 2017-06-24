@@ -164,4 +164,38 @@ public class TestController extends Controller {
         }
         return ok(message);
     }
+
+    public Result template1()
+    {
+        return ok(views.html.test.index.render());
+    }
+
+    public Result template2()
+    {
+        ArrayList users = new ArrayList<String>();
+        users.add("Jack");
+        users.add("John");
+        users.add("Helen");
+
+        String title = "Hello World";
+        Integer count = 456;
+        String html = "<strong>Hi!</strong>";
+
+        return ok(views.html.test.index2.render(users, title, count, html));
+    }
+
+    public Result template3()
+    {
+        return ok(views.html.test.index.render());
+    }
+
+    public Result template4()
+    {
+        return ok(views.html.test.index.render());
+    }
+
+    public Result template5()
+    {
+        return ok(views.html.test.index.render());
+    }
 }
