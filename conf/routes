@@ -4,8 +4,49 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-GET     /products/                  controllers.ProductsController.list
-GET     /product/:ean               controllers.ProductsController.find(ean: String)
+
+
+# ####################################################################
+# TestController Test Cases
+# ####################################################################
+
+GET     /test/response1                  controllers.TestController.response1
+GET     /test/response2                  controllers.TestController.response2
+GET     /test/response3                  controllers.TestController.response3
+GET     /test/response4                  controllers.TestController.response4
+GET     /test/response5                  controllers.TestController.response5
+GET     /test/response6                  controllers.TestController.response6
+GET     /test/response7                  controllers.TestController.response7
+GET     /test/parameter1/:para                  controllers.TestController.parameter1(para : String)
+GET     /test/parameter2/:para                  controllers.TestController.parameter2(para : Integer)
+GET     /test/parameter3/*para                  controllers.TestController.parameter3(para : String)
+GET     /test/parameter4/$para<[0-9]>                  controllers.TestController.parameter4(para : Integer)
+# Provide default value test/parameter5?para=ee
+GET     /test/parameter5                  controllers.TestController.parameter5(para: String ?= "default")
+GET     /test/redirect1                  controllers.TestController.redirect1()
+GET     /test/redirect2                  controllers.TestController.redirect2()
+GET     /test/response-type-1                  controllers.TestController.responseType1()
+GET     /test/response-type-2                  controllers.TestController.responseType2()
+GET     /test/response-type-3                  controllers.TestController.responseType3()
+GET     /test/response-type-4                  controllers.TestController.responseType4()
+GET     /test/response-type-5                  controllers.TestController.responseType5()
+GET     /test/response-type-6                  controllers.TestController.responseType6()
+GET     /test/response-type-7                  controllers.TestController.responseType7()
+GET     /test/response-type-8                  controllers.TestController.responseType8()
+GET     /test/response-type-9                  controllers.TestController.responseType9()
+GET     /test/response-type-10                  controllers.TestController.responseType10()
+GET     /test/response-type-11                  controllers.TestController.responseType11()
+
+# Redirects to https://www.playframework.com/ with 303 See Other
+GET   /play      controllers.Default.redirect(to = "https://www.playframework.com/")
+# Responds with 404 Not Found
+GET   /not-found     controllers.Default.notFound
+# Responds with 500 Internal Server Error
+GET   /error    controllers.Default.error
+# Responds with 501 Not Implemented
+GET   /todo      controllers.Default.todo
+
+####################################################################
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
