@@ -1,0 +1,5 @@
+*
+!build.properties
+!plugins.sbt
+!scaffold.sbt
+!.gitignore
