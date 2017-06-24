@@ -1,4 +1,7 @@
 ```
-# Trent
-Experimental Artificial Intelligence Bot
+	                                    ╔╦╗╦═╗╔═╗╔╗╔╔╦╗
+	                                     ║ ╠╦╝║╣ ║║║ ║
+	                                     ╩ ╩╚═╚═╝╝╚╝ ╩
+	                        Experimental Artificial Intelligence Bot
+
 ```
