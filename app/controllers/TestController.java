@@ -186,7 +186,9 @@ public class TestController extends Controller {
 
     public Result template3()
     {
-        return ok(views.html.test.index.render());
+        String title = "Page Title";
+
+        return ok(views.html.test.index3.render(title));
     }
 
     public Result template4()

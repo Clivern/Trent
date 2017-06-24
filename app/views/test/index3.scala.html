@@ -1,0 +1,15 @@
+@import layouts._
+@import partials._
+
+@(title : String)
+
+@main(title = title) {
+  <script type="text/javascript">alert("hello !");</script>
+} {
+
+	@notice("error", "Oops, something is wrong")
+	@notice("success", "Success Viola!")
+	<h1>Main</h1>
+} {
+	<h1>Sidebar</h1>
+}
