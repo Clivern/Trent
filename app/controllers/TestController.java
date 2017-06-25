@@ -5,6 +5,7 @@ import play.mvc.*;
 import java.util.*;
 import play.libs.*;
 import play.data.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -201,13 +202,14 @@ public class TestController extends Controller {
     public Result formAction()
     {
         DynamicForm dynamicForm = Form.form().bindFromRequest();
-        ArrayList<String> data = new ArrayList<String>();
 
-        data.add(dynamicForm.get("firstname"));
-        data.add(dynamicForm.get("lastname"));
+        ObjectNode result = Json.newObject();
+        result.put("firstname", dynamicForm.get("firstname"));
+        result.put("lastname", dynamicForm.get("lastname"));
+
         //data.add(lastname);
         //System.out.println(Json.toJson(requestData));
 
-        return ok(Json.toJson(data));
+        return ok(Json.toJson(result));
     }
 }
