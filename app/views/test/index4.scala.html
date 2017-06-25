@@ -1,0 +1,21 @@
+@import layouts._
+@import partials._
+@import helper._
+
+@(title : String)
+
+@main(title = title) {
+  <script type="text/javascript">alert("hello !");</script>
+} {
+	<h1>Main</h1>
+	<form method="post" action="@controllers.routes.TestController.formAction()">
+		@CSRF.formField
+	  First name:<br>
+	  <input type="text" name="firstname" value=""><br>
+	  Last name:<br>
+	  <input type="text" name="lastname" value=""><br><br>
+	  <input type="submit" value="Submit">
+	</form>
+} {
+	<h1>Sidebar</h1>
+}

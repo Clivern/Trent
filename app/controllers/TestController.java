@@ -4,13 +4,13 @@ import play.*;
 import play.mvc.*;
 import java.util.*;
 import play.libs.*;
+import play.data.*;
 
 /**
  * This controller contains an action to handle HTTP requests
  * to the application's products page.
  */
 public class TestController extends Controller {
-
 
     public Result response1()
     {
@@ -193,11 +193,21 @@ public class TestController extends Controller {
 
     public Result template4()
     {
-        return ok(views.html.test.index.render());
+        String title = "Forms";
+
+        return ok(views.html.test.index4.render(title));
     }
 
-    public Result template5()
+    public Result formAction()
     {
-        return ok(views.html.test.index.render());
+        DynamicForm dynamicForm = Form.form().bindFromRequest();
+        ArrayList<String> data = new ArrayList<String>();
+
+        data.add(dynamicForm.get("firstname"));
+        data.add(dynamicForm.get("lastname"));
+        //data.add(lastname);
+        //System.out.println(Json.toJson(requestData));
+
+        return ok(Json.toJson(data));
     }
 }

@@ -51,7 +51,7 @@ GET     /test/tpl-1                  controllers.TestController.template1()
 GET     /test/tpl-2                  controllers.TestController.template2()
 GET     /test/tpl-3                  controllers.TestController.template3()
 GET     /test/tpl-4                  controllers.TestController.template4()
-GET     /test/tpl-5                  controllers.TestController.template5()
+POST     /test/form-action            controllers.TestController.formAction()
 
 ####################################################################
 
