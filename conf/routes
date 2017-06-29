@@ -3,7 +3,9 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET       /                                     controllers.HomeController.doGet
+POST      /                                     controllers.HomeController.doPost
+POST      /test/post                            controllers.HomeController.testPost
 
 
 # ####################################################################
