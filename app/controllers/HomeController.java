@@ -41,10 +41,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class HomeController extends Controller {
 
-	//public static String PAGE_ACCESS_TOKEN = "";
-	public static String PAGE_ACCESS_TOKEN = "EAAEPZCEjGRwwBAPcQlB6qv4d356mrMgZBGSNpQGYkG9zZCND86AGzK9n8WqmnMysAjlY2XZCbEbqmuj93yoX3PyzORRH53JzAd7qAGVjMOU6bd08fZAgAnapJz8EBPN5pkpfRnjGul6mDf6FyYllZAvZCo8kYk7mgfGdobyCc8y4MkmdmOv3Nek";
-	public static String VERIFY_TOKEN = "djhwndgjxtyewfwgde";
-
 	public Result doGet () {
 
         DynamicForm dynamicForm = Form.form().bindFromRequest();
@@ -53,7 +49,7 @@ public class HomeController extends Controller {
         String hub_verify_token = dynamicForm.get("hub.verify_token");
 
         if( (hub_mode != null) && (hub_challenge != null) && hub_mode.equals("subscribe") ){
-        	if( (hub_verify_token == null) || !hub_verify_token.equals(VERIFY_TOKEN) ){
+        	if( (hub_verify_token == null) || !hub_verify_token.equals("djhwndgjxtyewfwgde") ){
         		return ok("Verification token mismatch");
         	}
         	return ok(hub_challenge);
@@ -99,10 +95,10 @@ public class HomeController extends Controller {
 	public Result sendMsg(String recipient_id, String message) throws JSONException, UnirestException {
 
 		//https://graph.facebook.com/v2.6/me/messages?access_token=
-		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=";
+		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAPcQlB6qv4d356mrMgZBGSNpQGYkG9zZCND86AGzK9n8WqmnMysAjlY2XZCbEbqmuj93yoX3PyzORRH53JzAd7qAGVjMOU6bd08fZAgAnapJz8EBPN5pkpfRnjGul6mDf6FyYllZAvZCo8kYk7mgfGdobyCc8y4MkmdmOv3Nek";
 		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},{\"message\":{\"text\":\"" + message + "\"}}}";
-		HttpResponse<String> response = Unirest.post(url + PAGE_ACCESS_TOKEN).header("accept", "application/json").body(body).asString();
+		HttpResponse<String> response = Unirest.post(url).header("Content-Type", "application/json").body(body).asString();
 
-		return ok(response.getStatusText());
+		return ok(url);
 	}
 }
