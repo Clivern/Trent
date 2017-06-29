@@ -49,7 +49,7 @@ public class HomeController extends Controller {
         String hub_verify_token = dynamicForm.get("hub.verify_token");
 
         if( (hub_mode != null) && (hub_challenge != null) && hub_mode.equals("subscribe") ){
-        	if( (hub_verify_token == null) || !hub_verify_token.equals("djhwndgjxtyewfwgde") ){
+        	if( (hub_verify_token == null) || !hub_verify_token.equals("djhwndgjxtgde") ){
         		return ok("Verification token mismatch");
         	}
         	return ok(hub_challenge);
@@ -99,7 +99,7 @@ public class HomeController extends Controller {
 	public Result sendMsg(String recipient_id, String message) throws JSONException, UnirestException {
 
 		//https://graph.facebook.com/v2.6/me/messages?access_token=
-		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAJbEgadksysycoXuAeSVbhLMVulAUEZBBwt55SURvXRLVahyI6FmXAzvYop2LiILcQ4JHkAze31mUHIuZARyGvwTgUlHyluj80We5IDbFNVySvFRI6pqy7HChCDkOO5sn3bYdYniZCv1X5ZBEWc1IBt2KQNERgnw9gqrTzXt";
+		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAJbEgadksysycoXuAeSVbhLMVulAUEZBBwt55SURvXRLVahyI6FmXAzvYop2LiILcQ4JHkAze31mUHIuZARyGvwTgUlHyluj80We5IDbFNVySvFCDkOO5sn3bYdYniZCv1X5ZBEWc1IBt2KQNERgnw9gqrTzXt";
 		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},\"message\":{\"text\":\"" + message + "\"}}";
 
 		Unirest.post("https://requestb.in/10ux9251").body("curl --header \"Content-type: application/json\" --request POST --data '" + body + "' " + url).asString();
