@@ -2,6 +2,6 @@
 	                                    ╔╦╗╦═╗╔═╗╔╗╔╔╦╗
 	                                     ║ ╠╦╝║╣ ║║║ ║
 	                                     ╩ ╩╚═╚═╝╝╚╝ ╩
-	                           Java Web Applications Starter Kit
+	                      Experimental Chatbots With Java & Play Framework
 
 ```
