@@ -99,6 +99,6 @@ public class HomeController extends Controller {
 		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},{\"message\":{\"text\":\"" + message + "\"}}}";
 		HttpResponse<String> response = Unirest.post(url).header("Content-Type", "application/json").body(body).asString();
 
-		return ok(response.getStatusText());
+		return ok("ok");
 	}
 }
