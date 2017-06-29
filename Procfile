@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/trent -Dhttp.port=443
