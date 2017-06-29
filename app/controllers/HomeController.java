@@ -95,7 +95,7 @@ public class HomeController extends Controller {
 	public Result sendMsg(String recipient_id, String message) throws JSONException, UnirestException {
 
 		//https://graph.facebook.com/v2.6/me/messages?access_token=
-		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAPcQlB6qv4d356mrMgZBGSNpQGYkG9zZCND86AGzK9n8WqmnMysAjlY2XZCbEbqmuj93yoX3PyzORRH53JzAd7qAGVjMOU6bd08fZAgAnapJz8EBPN5pkpfRnjGul6mDf6FyYllZAvZCo8kYk7mgfGdobyCc8y4MkmdmOv3Nek";
+		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAM6UdcbiVc9kYtPrhxrQkPruZC8oAUXk3jxi8ZC4vWOz95oOkJYMYn4jZAVUy45v1pwJiEkKzUjJIPyWbtaUBMTqPJz5ZA8ZCtU7fAtRzV1XVXHQ98TxF2pPfyAx1Wl7UXZApGFTh5l5wN56sZAjibO1z6tGwu4SnjKBmGYeyrB";
 		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},{\"message\":{\"text\":\"" + message + "\"}}}";
 		HttpResponse<String> response = Unirest.post(url).header("Content-Type", "application/json").body(body).asString();
 
