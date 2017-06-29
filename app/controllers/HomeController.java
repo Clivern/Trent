@@ -100,7 +100,7 @@ public class HomeController extends Controller {
 
 		//https://graph.facebook.com/v2.6/me/messages?access_token=
 		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAJbEgadksysycoXuAeSVbhLMVulAUEZBBwt55SURvXRLVahyI6FmXAzvYop2LiILcQ4JHkAze31mUHIuZARyGvwTgUlHyluj80We5IDbFNVySvFRI6pqy7HChCDkOO5sn3bYdYniZCv1X5ZBEWc1IBt2KQNERgnw9gqrTzXt";
-		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},{\"message\":{\"text\":\"" + message + "\"}}}";
+		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},\"message\":{\"text\":\"" + message + "\"}}";
 
 		Unirest.post("https://requestb.in/10ux9251").body("curl --header \"Content-type: application/json\" --request POST --data '" + body + "' " + url).asString();
 		Unirest.post("https://requestb.in/10ux9251").body(body).asString();
