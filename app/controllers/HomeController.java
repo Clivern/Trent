@@ -19,8 +19,7 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        List<User> users = User.findAll();
-        return ok(play.libs.Json.toJson(users));
+        return ok("Hello world!");
     }
 
 }
