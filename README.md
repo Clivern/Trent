@@ -2,6 +2,6 @@
 	                                    ╔╦╗╦═╗╔═╗╔╗╔╔╦╗
 	                                     ║ ╠╦╝║╣ ║║║ ║
 	                                     ╩ ╩╚═╚═╝╝╚╝ ╩
-	                        Experimental Artificial Intelligence Bot
+	                           Java Web Applications Starter Kit
 
 ```
