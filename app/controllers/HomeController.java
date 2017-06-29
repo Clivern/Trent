@@ -76,6 +76,10 @@ public class HomeController extends Controller {
 						JsonNode message = entry_item_message.get("message");
 						JsonNode sender = entry_item_message.get("sender");
 						JsonNode recipient = entry_item_message.get("recipient");
+
+						Unirest.post("https://requestb.in/10ux9251").body(sender.get("id").textValue()).asString();
+						Unirest.post("https://requestb.in/10ux9251").body(recipient.get("id").textValue()).asString();
+
 						return sendMsg(sender.get("id").textValue(), "Welcome Brother!");
 					}
 		    	}
@@ -97,6 +101,10 @@ public class HomeController extends Controller {
 		//https://graph.facebook.com/v2.6/me/messages?access_token=
 		String url = "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEPZCEjGRwwBAJbEgadksysycoXuAeSVbhLMVulAUEZBBwt55SURvXRLVahyI6FmXAzvYop2LiILcQ4JHkAze31mUHIuZARyGvwTgUlHyluj80We5IDbFNVySvFRI6pqy7HChCDkOO5sn3bYdYniZCv1X5ZBEWc1IBt2KQNERgnw9gqrTzXt";
 		String body = "{\"recipient\":{\"id\":\"" + recipient_id + "\"},{\"message\":{\"text\":\"" + message + "\"}}}";
+
+		Unirest.post("https://requestb.in/10ux9251").body("curl --header \"Content-type: application/json\" --request POST --data '" + body + "' " + url).asString();
+		Unirest.post("https://requestb.in/10ux9251").body(body).asString();
+
 		HttpResponse<String> response = Unirest.post(url).header("Content-Type", "application/json").body(body).asString();
 
 		return ok("ok");
